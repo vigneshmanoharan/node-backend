@@ -17,7 +17,7 @@ router.get('/list', isAuthenticated, async (req, res, next) => {
   }
 });
 // Add new movie API
-router.post('/addMovie', isAuthenticated, async (req, res, next) => {
+router.post('/', isAuthenticated, async (req, res, next) => {
   try {
     const {
       movieName, userId, cast,
