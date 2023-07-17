@@ -150,7 +150,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/v1/movie/addMovie",
+					"raw": "http://localhost:5000/api/v1/movie",
 					"protocol": "http",
 					"host": [
 						"localhost"
