@@ -78,10 +78,11 @@ router.put('/:id', isAuthenticated, async (req, res, next) => {
       throw new Error('No movie found for given id');
     }
     const {
-      movieName, userId, cast, releaseDate,
+      movieName, userId, cast,
     } = req.body;
     let { rating } = req.body;
     rating = Number(rating);
+    const releaseDate = new Date(req.body.releaseDate).toISOString();
     const movie = await updateMovie({
       movieName, rating, userId, cast, releaseDate,
     }, movieId);
