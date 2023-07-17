@@ -20,8 +20,11 @@ router.get('/list', isAuthenticated, async (req, res, next) => {
 router.post('/addMovie', isAuthenticated, async (req, res, next) => {
   try {
     const {
-      movieName, rating, userId, cast, releaseDate,
+      movieName, userId, cast,
     } = req.body;
+    const rating = Number(req.body.rating);
+    const releaseDate = new Date(req.body.releaseDate).toISOString();
+
     if (!movieName || !rating || !userId || !cast || !releaseDate) {
       res.status(400);
       throw new Error('Required Parameters are missing');
@@ -75,9 +78,10 @@ router.put('/:id', isAuthenticated, async (req, res, next) => {
       throw new Error('No movie found for given id');
     }
     const {
-      movieName, rating, userId, cast, releaseDate,
+      movieName, userId, cast, releaseDate,
     } = req.body;
-
+    let { rating } = req.body;
+    rating = Number(rating);
     const movie = await updateMovie({
       movieName, rating, userId, cast, releaseDate,
     }, movieId);
@@ -99,9 +103,7 @@ router.get('/:id', isAuthenticated, async (req, res, next) => {
       res.status(404);
       throw new Error('No movie found for given id');
     }
-    res.json({
-      movie,
-    });
+    res.json(movie);
   } catch (err) {
     next(err);
   }

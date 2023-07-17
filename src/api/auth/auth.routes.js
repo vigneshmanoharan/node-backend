@@ -57,13 +57,13 @@ router.post('/login', async (req, res, next) => {
     const existingUser = await findUserByEmail(email);
 
     if (!existingUser) {
-      res.status(403);
+      res.status(401);
       throw new Error('Invalid login credentials.');
     }
 
     const validPassword = await bcrypt.compare(password, existingUser.password);
     if (!validPassword) {
-      res.status(403);
+      res.status(401);
       throw new Error('Invalid login credentials.');
     }
 
