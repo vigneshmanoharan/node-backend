@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "14736156-6bd4-4b8b-bc94-1578ec356587",
+		"name": "assesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AuthRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"vignesh@\",\n    \"password\": \"demo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"vignesh@gmail.com\",\n    \"password\" : \"demo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1MjU3NDQsImV4cCI6MTY4OTUyNjM0NH0.T7ut1hJUEwTSbLw00MvuqGvDxH22TV8pHmLgccNEnzQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MovieList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1NzEwMzQsImV4cCI6MTY4OTU3MTYzNH0.qM259N_eeIvz8_1O5X2lR0fzxsP8edGZWKC1Jto2AJQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/movie/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMovie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1NzEwMzQsImV4cCI6MTY4OTU3MTYzNH0.qM259N_eeIvz8_1O5X2lR0fzxsP8edGZWKC1Jto2AJQ",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"movieName\": \"Vikram\",\n        \"rating\": 3,\n        \"userId\": \"vignesh@gmail.com\",\n        \"cast\": \"Kamal,Fazil\",\n        \"releaseDate\": \"2023-07-16T16:06:15.343Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/movie/addMovie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"addMovie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteMovie",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1NzM0NjcsImV4cCI6MTY4OTU3NTI2N30.0ALMDCPFecHjfyPHdu626hJ0pPjocVzZGw5P7DZhwN8",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/movie/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMovie",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1NzQ3MzIsImV4cCI6MTY4OTU3NjUzMn0.BZLXIsiKdk3aAgCDmNMsIHYggqRWZi7V3G8A8frnH6E",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"58543a1e-af31-47c8-b538-cb9a49094a33\",\n        \"movieName\": \"Vikram\",\n        \"rating\": 3,\n        \"userId\": \"vignesh@gmail.com\",\n        \"cast\": \"Kamal,Fazil,gaytahri,Fazil\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/movie/58543a1e-af31-47c8-b538-cb9a49094a33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"58543a1e-af31-47c8-b538-cb9a49094a33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMovieById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDM5NTc3MS0zMDg0LTQ5ODEtYThmNi1lOWIxYjE1OTc5NmYiLCJpYXQiOjE2ODk1NzQ3MzIsImV4cCI6MTY4OTU3NjUzMn0.BZLXIsiKdk3aAgCDmNMsIHYggqRWZi7V3G8A8frnH6E",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/v1/movie/58543a1e-af31-47c8-b538-cb9a49094a33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"movie",
+						"58543a1e-af31-47c8-b538-cb9a49094a33"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
